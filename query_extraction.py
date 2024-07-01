@@ -18,10 +18,10 @@ with open('metadata.json') as f:
 
 
 tokenizer, model = build_model(model_repo = CFG.model_name)
-# terminators = [
-#     tokenizer.eos_token_id,
-#     tokenizer.bos_token_id
-# ]
+terminators = [
+    tokenizer.eos_token_id,
+    tokenizer.bos_token_id
+]
 
 # save_directory= "./model"
 # # accelerator = Accelerator()
