@@ -42,6 +42,7 @@ Examples:
 1. Query: "Can you tell me the authors of the paper titled 'An Alternative Source for Dark Energy'?”
    Identified Attributes:
    title: 'An Alternative Source for Dark Energy'
+   keywords: 'Alternative Source, Dark Energy'
    Main Query: "Can you tell me the authors of the paper."
    Output: ["Can you tell me the authors of the paper.", {"title": "An Alternative Source for Dark Energy", "keywords": "Alternative Source, Dark Energy"}]
 
@@ -102,7 +103,7 @@ Examples:
    keywords: 'climate change adaptation'
    publication_date: '22 May 2022'
    Main Query: "I want the arxiv_id and results of the paper."
-   Output: ["I want the arxiv_id and results of the paper.", {"author": "Dr. Smith", "keywords": "climate change adaptation", "publication_date": "2022-05-22"}]
+   Output: ["I want the arxiv_id and results of the paper.", {"author": "Dr. Smith", "keywords": "climate change, adaptation", "publication_date": "2022-05-22"}]
 
 10. Query: "Please give me the abstract of the research on blockchain technology."
     Identified Attributes:
