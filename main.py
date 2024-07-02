@@ -87,6 +87,7 @@ Examples:
 7. Query: "Give me a novel way to devise therapeutic drugs to treat cancer?"
    Identified Attributes:
    keywords: 'cancer'
+   abstract: 'A novel way to devise therapeutic drugs to treat cancer.'
    Main Query: "Give me a novel way to devise therapeutic drugs to treat cancer."
    Output: ["Give me a novel way to devise therapeutic drugs to treat cancer.", {"abstract": "A novel way to devise therapeutic drugs to treat cancer.", "keywords":"cancer"}]
 
@@ -107,6 +108,7 @@ Examples:
 
 10. Query: "Please give me the abstract of the research on blockchain technology."
     Identified Attributes:
+    abstract: 'Research on blockchain technology.'
     keywords: 'blockchain technology'
     Main Query: "Please give me the abstract of the research."
     Output: ["Please give me the abstract of the research.", {"abstract": "Research on blockchain technology.","keywords": "blockchain technology"}]
