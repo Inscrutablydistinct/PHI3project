@@ -32,7 +32,7 @@ def filter_attributes(metadata_entry, key, value):
         return cos_sim*10
     elif (key == 'keywords'):
         cos_sim = compute_cosine_similarity(metadata_entry['keywords'], value)
-        return cos_sim*10/count
+        return cos_sim*10
     elif (key == 'publication_date'):
         op = value[0] if value[1].isdigit() else value[0:2]
         value = value[len(op):]
