@@ -11,8 +11,8 @@ class CFG:
     temperature = 0.4
     top_p = 0.90
     repetition_penalty = 1.15
-    max_len = 8192
-    max_new_tokens = 512
+    max_len = 1024
+    max_new_tokens = 1024
     split_chunk_size = 400
     split_overlap = 200
     embeddings_model_repo = 'BAAI/bge-base-en-v1.5'
