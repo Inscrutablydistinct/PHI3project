@@ -31,8 +31,13 @@ def filter_attributes(metadata_entry, key, value):
         cos_sim = compute_cosine_similarity(metadata_entry['abstract'], value)
         return cos_sim*10
     elif (key == 'keywords'):
-        cos_sim = compute_cosine_similarity(metadata_entry['abstract'], value)
-        return cos_sim*10
+        count = 0
+        total = 0
+        for v in metadata_entry['keywords']:
+            cos_sim = compute_cosine_similarity(v, value)
+            total += cos_sim*10
+            count+=1
+        return cos_sim*10/count
     elif (key == 'publication_date'):
         op = value[0] if value[1].isdigit() else value[0:2]
         value = value[len(op):]
@@ -65,8 +70,11 @@ def filter_data(metadata, filter_dict):
         for key, value in filter_dict.items():
             if key in entry:
               total_score += filter_attributes(entry, key, value)
+        print(total_score)
         scored_metadata.append((total_score, entry))
 
     scored_metadata.sort(reverse=True, key=lambda x: x[0])
     top_results = [entry for _, entry in scored_metadata[:3]]
     return top_results
+
+
