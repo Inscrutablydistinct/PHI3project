@@ -4,9 +4,14 @@ from model_param import CFG
 from embeddings_and_context import make_embeddings, make_context
 from process_output import llm_ans
 from filter_by_metadata import filter_data
+import ast
+import re
+import json
 import json
 from langchain.embeddings import HuggingFaceInstructEmbeddings
-import time
+import time 
+import warnings
+warnings.filterwarnings("ignore")
 
 with open('metadata.json') as f:
     d = json.load(f)
@@ -107,21 +112,9 @@ Examples:
 
 The answer should only be a list and no other content whatsoever. Please print the Output for the following query:\n"""
 
-query = "I need the summary of abstract and results from the recent paper on DNA bending before 27 August 2020?"
-start_time = time.time()
-out = generate_md(Question,query)
-
-filtered_metadata = filter_data(d,out[1])
-
-print(filtered_metadata[0])
-
 list_of_documents = text_split.text_split(d)
 
 vectordb = make_embeddings(embeddings,list_of_documents)
-
-context = make_context(embeddings, list_of_documents, filtered_metadata[0],out, vectordb)
-
-llm = model_pipeline()
 
 def ans(llm, context, question):
    prompt = f"""<|system|>
@@ -154,5 +147,26 @@ def ans(llm, context, question):
    llm_response = llm(prompt)
    return llm_ans(llm_response)
 
-print(ans(llm,context,out[0]))
-print("Time Taken: " + time.time() - start_time)
+llm = model_pipeline()
+
+# query = "I need the summary of abstract and results from the recent paper on DNA bending before 27 August 2020?"
+query = ""
+
+while (query.lower() != "stop"):
+    query = input("Enter your query here. Write 'stop' to terminate running.")
+    
+    start_time = time.time()
+    
+    out = generate_md(Question,query)
+    
+    filtered_metadata = filter_data(d,out[1])
+    
+    # print(filtered_metadata[0])
+    
+    context = make_context(embeddings, list_of_documents, filtered_metadata[0],out, vectordb)
+    
+    print(ans(llm,context,out[0]))
+
+    print("Source Document: "+ filtered_metadata[0]['title'])
+    
+    print("Time Taken: "+ str(time.time() - start_time))
