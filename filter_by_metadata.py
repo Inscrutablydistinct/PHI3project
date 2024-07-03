@@ -8,9 +8,7 @@ from transformers import (
     BitsAndBytesConfig,
     pipeline
 )
-
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 from datetime import datetime
 
 def compute_cosine_similarity(text1, text2):
