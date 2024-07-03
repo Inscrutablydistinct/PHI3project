@@ -184,6 +184,43 @@ md = [{
         "Experimental searches for axion-like particles",
         "Faraday effect and magneto-optical effects in condensed matter"
     ]
+},{
+    "title": "Bone Cancer Rates in Dinosaurs Compared with Modern Vertebrates",
+    "authors": [
+        "L.C. Natarajan",
+        "A.L. Melott",
+        "B.M. Rothschild",
+        "L.D. Martin"
+    ],
+    "abstract": "Data on the prevalence of bone cancer in dinosaurs is available from past radiological examination of preserved bones. We statistically test this data for consistency with rates extrapolated from information on bone cancer in modern vertebrates, and find that there is no evidence of a different rate. Thus, this test provides no support for a possible role of ionizing radiation in the K-T extinction event.",
+    "keywords": [
+        "bone cancer",
+        "dinosaurs",
+        "modern vertebrates",
+        "ionizing radiation",
+        "K-T extinction event"
+    ],
+    "publication_date": None,  # Not explicitly provided in the text
+    "arxiv_id": None,  # Not provided in the text
+    "results": "The rate of metastatic bone disease in the dinosaur fossil record is consistent with the predicted rate of bone metastasis in the dinosaur record. The probability of finding less than one cancer is 37% according to the reptilian cancer rate, and 71% according to the avian rate, so the observed event does not represent an elevated rate. We cannot negate the null hypothesis. Thus, there does not appear to be an elevated rate of bone cancer in the dinosaur fossil record."
+},{
+    "title": "Approach to Physical Reality: a note on Poincaré Group and the philosophy of Nagarjuna",
+    "authors": [
+        "David Vernette",
+        "Punam Tandan",
+        "Michele Caponigro"
+    ],
+    "abstract": "We argue about a possible scenario of physical reality based on the parallelism between Poincaré group and the sunyata philosophy of Nagarjuna. The notion of 'relational' is the common denominator of two views. We have approached the relational concept in third-person perspective (ontic level). It is possible to deduce different physical consequences and interpretations through first-person perspective approach. This relational interpretation leaves open the questions: i) must we abandon the idea of a physical system's ability to extract complete information? ii) must we abandon the idea of inferring a possible structure of physical reality?",
+    "keywords": [
+        "Poincaré group",
+        "Nagarjuna",
+        "sunyata philosophy",
+        "relational reality",
+        "quantum mechanics"
+    ],
+    "publication_date": "13 Apr 2007",
+    "arxiv_id": "0704.1665v1 [physics.gen-ph]",
+    "results": "The paper explores the link between relational concepts in both Poincaré group transformations and Nagarjuna's sunyata philosophy. It concludes that both physical reality and our epistemological frameworks are fundamentally relational, rather than absolute. This approach suggests new considerations for fundamental problems in physics, such as the unification of laws and the continuum versus discrete views of reality."
 }
 ]
 
