@@ -170,7 +170,7 @@ while (query.lower() != "stop"):
     
     out = generate_md(Question,query)
     
-    filtered_metadata = filter_data(d,out[1])
+    filtered_metadata = filter_data(d,out[1],embeddings)
     
     # print(filtered_metadata[0])
     
