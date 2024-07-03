@@ -19,7 +19,7 @@ def text_split(md):
 
     list_of_documents = []
 
-    arr = [3948,4042,4111,486,504,3760,682,2271,429,748]
+    arr = [3948,4042,4111,486,504,3760,682,2271,429,748,1912,1665]
     j = 0
     for i in arr:
         file_path = f"{CFG.PDFs_path}/pdf{i}.pdf"
