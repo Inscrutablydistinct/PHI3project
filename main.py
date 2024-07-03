@@ -168,7 +168,7 @@ while (query.lower() != "stop"):
     # print(filtered_metadata[0])
     
     context = make_context(list_of_documents, filtered_metadata[0],out, vectordb)
-    
+    print(context)
     print(ans(llm,context,out[0]))
 
     print("Source Document: "+ filtered_metadata[0]['title'])
