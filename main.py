@@ -7,8 +7,6 @@ from filter_by_metadata import filter_data
 import ast
 import re
 import json
-import json
-from langchain.embeddings import HuggingFaceInstructEmbeddings
 import time 
 import warnings
 warnings.filterwarnings("ignore")
