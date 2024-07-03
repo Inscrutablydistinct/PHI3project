@@ -1,4 +1,4 @@
-from model_param import CFG
+from model_param import CFG, embeddings
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain_community.vectorstores import FAISS
 import os
@@ -6,8 +6,7 @@ import re
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-
-def make_embeddings(embeddings, list_of_documents):
+def make_embeddings(list_of_documents):
     index_path = os.path.join(CFG.Embeddings_path, 'index.faiss')
     if not os.path.exists(index_path):
         print('Creating embeddings...\n\n')
@@ -34,7 +33,7 @@ def find_similar(list_of_documents, top):
             filtered_indices.append(idx)
     return filtered_indices, filtered_documents
 
-def make_context(embeddings, list_of_documents,top_md,out , vectordb):
+def make_context(list_of_documents, top_md, out, vectordb):
     filtered_indices, filtered_documents = find_similar(list_of_documents, top_md)
     if not filtered_indices:
         print("No documents found with the specified metadata.")
