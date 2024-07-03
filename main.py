@@ -16,11 +16,6 @@ warnings.filterwarnings("ignore")
 with open('metadata.json') as f:
     d = json.load(f)
 
-embeddings = HuggingFaceInstructEmbeddings(
-    model_name= CFG.embeddings_model_repo,
-    model_kwargs={"device": "cpu"}
-)
-
 Question = """Your task is to identify the attributes/features of the metadata from a given user query. The attributes/features you need to identify are:
 
 title
