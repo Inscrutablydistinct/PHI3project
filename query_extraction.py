@@ -25,7 +25,6 @@ def generate_md(Question, query):
     inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt")
     outputs = model.generate(inputs, max_new_tokens=150)
     text = tokenizer.batch_decode(outputs)[0]
-    print(text)
     text = process_llm_response(text)
     pattern = r'\["(.*?)",\s*{(?:\s*".*?":\s*".*?"\s*,?\s*)*}\]'
     match = re.search(pattern, text)
