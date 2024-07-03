@@ -11,10 +11,8 @@ from transformers import (
 from datetime import datetime
 
 def compute_cosine_similarity(text1, text2):
-    text1 = str(text1)
-    text2 = str(text2)
-    embed1 = embeddings.encode(text1)
-    embed2 = embeddings.encode(text2)
+    embed1 = embeddings.embed_query(str(text1))
+    embed2 = embeddings.embed_query(str(text2))
     return cosine_similarity([embed1], [embed2])[0][0]
 
 def filter_attributes(metadata_entry, key, value):
