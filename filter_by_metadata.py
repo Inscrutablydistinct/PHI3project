@@ -1,6 +1,6 @@
 import warnings
 warnings.filterwarnings("ignore")
-
+from model_param import embeddings
 from sklearn.metrics.pairwise import cosine_similarity
 import transformers
 from transformers import (
@@ -8,16 +8,14 @@ from transformers import (
     BitsAndBytesConfig,
     pipeline
 )
-from sklearn.feature_extraction.text import TfidfVectorizer
 from datetime import datetime
 
 def compute_cosine_similarity(text1, text2):
     text1 = str(text1)
     text2 = str(text2)
-    vectorizer = TfidfVectorizer().fit_transform([text1, text2])
-    vectors = vectorizer.toarray()
-    cosine_sim = cosine_similarity(vectors)[0][1]
-    return cosine_sim
+    embed1 = embeddings.encode(text1)
+    embed2 = embeddings.encode(text2)
+    return cosine_similarity([embed1], [embed2])[0][0]
 
 def filter_attributes(metadata_entry, key, value):
     if (key=='title'):
