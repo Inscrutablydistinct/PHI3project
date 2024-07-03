@@ -14,9 +14,9 @@ class CFG:
     repetition_penalty = 1.15
     max_len = 256
     max_new_tokens = 256
-    split_chunk_size = 512
-    split_overlap = 200
-    embeddings_model_repo = 'BAAI/bge-base-en-v1.5'
+    split_chunk_size = 1024
+    split_overlap = 400
+    embeddings_model_repo = 'BAAI/bge-m3'
     k = 6
     PDFs_path = './New Folder With Items'
     Embeddings_path =  './papers-vectordb/faiss_index_papers'
