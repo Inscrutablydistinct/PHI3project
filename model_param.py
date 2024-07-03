@@ -4,6 +4,7 @@ from transformers import (
     BitsAndBytesConfig,
     pipeline
 )
+from langchain.embeddings import HuggingFaceInstructEmbeddings
 
 class CFG:
     DEBUG = False
