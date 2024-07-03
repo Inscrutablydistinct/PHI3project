@@ -167,7 +167,7 @@ while (query.lower() != "stop"):
     
     # print(filtered_metadata[0])
     
-    context = make_context(embeddings, list_of_documents, filtered_metadata[0],out, vectordb)
+    context = make_context(list_of_documents, filtered_metadata[0],out, vectordb)
     
     print(ans(llm,context,out[0]))
 
