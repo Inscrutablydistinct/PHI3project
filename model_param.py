@@ -14,7 +14,7 @@ class CFG:
     repetition_penalty = 1.15
     max_len = 256
     max_new_tokens = 256
-    split_chunk_size = 400
+    split_chunk_size = 512
     split_overlap = 200
     embeddings_model_repo = 'BAAI/bge-base-en-v1.5'
     k = 6
