@@ -26,6 +26,8 @@ def generate_md(Question, query):
     outputs = model.generate(inputs, max_new_tokens=150)
     text = tokenizer.batch_decode(outputs)[0]
     text = process_llm_response(text)
+    print(text)
+    print()
     pattern = r'\["(.*?)",\s*{(?:\s*".*?":\s*".*?"\s*,?\s*)*}\]'
     match = re.search(pattern, text)
     if match:
