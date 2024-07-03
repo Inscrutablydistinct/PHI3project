@@ -1,5 +1,4 @@
 from model_param import CFG, embeddings
-from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain_community.vectorstores import FAISS
 import os
 import re
