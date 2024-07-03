@@ -34,3 +34,9 @@ def build_model(model_repo = CFG.model_name):
     )
 
     return tokenizer, model
+
+
+embeddings = HuggingFaceInstructEmbeddings(
+    model_name= CFG.embeddings_model_repo,
+    model_kwargs={"device": "cpu"}
+)
