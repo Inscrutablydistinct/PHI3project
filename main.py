@@ -118,7 +118,7 @@ The answer should only be a list and no other content whatsoever. Please print t
 
 list_of_documents = text_split.text_split(d)
 
-vectordb = make_embeddings(embeddings,list_of_documents)
+vectordb = make_embeddings(list_of_documents)
 
 def ans(llm, context, question):
    prompt = f"""<|system|>
@@ -163,7 +163,7 @@ while (query.lower() != "stop"):
     
     out = generate_md(Question,query)
     
-    filtered_metadata = filter_data(d,out[1],embeddings)
+    filtered_metadata = filter_data(d,out[1])
     
     # print(filtered_metadata[0])
     
