@@ -157,10 +157,9 @@ def ans(llm, context, question):
 llm = model_pipeline()
 
 # query = "I need the summary of abstract and results from the recent paper on DNA bending before 27 August 2020?"
-query = ""
+query = input("Enter your query here. Write 'stop' to terminate running.")
 
 while (query.lower() != "stop"):
-    query = input("Enter your query here. Write 'stop' to terminate running.")
     
     start_time = time.time()
     
@@ -177,3 +176,4 @@ while (query.lower() != "stop"):
     print("Source Document: "+ filtered_metadata[0]['title'])
     
     print("Time Taken: "+ str(time.time() - start_time))
+    query = input("Enter your query here. Write 'stop' to terminate running.")
