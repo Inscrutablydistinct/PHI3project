@@ -136,6 +136,8 @@ def ans(llm, context, question):
 
    Your answer should not be more than {CFG.max_len} words long.
 
+   The answer should be grammatically correct.
+
    Use only the following pieces of context to answer the question at the end.
 
    <|end|>
