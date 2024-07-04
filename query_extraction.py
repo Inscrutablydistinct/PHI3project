@@ -42,6 +42,8 @@ def model_pipeline():
         task="text-generation",
         model=model,
         tokenizer=tokenizer,
+        padding = CFG.padding
+        truncation = CFG.truncation
         eos_token_id=terminators,
         do_sample=True,
         max_length=CFG.max_len,
