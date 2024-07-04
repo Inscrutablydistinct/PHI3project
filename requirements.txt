@@ -49,6 +49,7 @@ pydantic_core
 PyMuPDF
 PyMuPDFb
 pypdf
+pyspellchecker
 PyYAML
 regex
 requests
