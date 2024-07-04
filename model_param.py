@@ -14,9 +14,9 @@ class CFG:
     padding = "max_length"
     truncation = True
     repetition_penalty = 1.15
-    max_len = 256
-    max_new_tokens = 256
-    split_chunk_size = 1024
+    max_len = 200
+    max_new_tokens = 200
+    split_chunk_size = 512
     split_overlap = 400
     embeddings_model_repo = 'BAAI/bge-m3'
     k = 6
