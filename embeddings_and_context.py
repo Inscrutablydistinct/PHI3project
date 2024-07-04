@@ -46,9 +46,7 @@ def make_context(list_of_documents, top_md, out, vectordb):
         print(f"\n\n{query}\n\n")
         query_embedding = embeddings.embed_query(query)
         query_embedding = np.array(query_embedding).reshape(1, -1)
-        print(query_embedding)
-        print()
-        print(filtered_embeddings)
+
         similarities = cosine_similarity(query_embedding, filtered_embeddings).flatten()
         top_k_indices = similarities.argsort()[-3:][::-1]
 
