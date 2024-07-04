@@ -11,6 +11,8 @@ class CFG:
     model_name = 'microsoft/Phi-3-mini-128k-instruct'
     temperature = 0.9
     top_p = 0.90
+    padding = "max_length"
+    truncation = True
     repetition_penalty = 1.15
     max_len = 256
     max_new_tokens = 256
