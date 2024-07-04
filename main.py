@@ -4,6 +4,7 @@ from model_param import CFG
 from embeddings_and_context import make_embeddings, make_context
 from process_output import llm_ans
 from filter_by_metadata import filter_data
+from data_preprocess import preprocess
 import ast
 import re
 import json
@@ -167,7 +168,7 @@ while (query.lower() != "stop"):
     
     # print(filtered_metadata[0])
     
-    context = make_context(list_of_documents, filtered_metadata[0],out, vectordb)
+    context = preprocess(make_context(list_of_documents, filtered_metadata[0],out, vectordb))
     print(context)
     print(ans(llm,context,out[0]))
 
