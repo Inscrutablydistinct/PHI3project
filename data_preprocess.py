@@ -116,7 +116,7 @@ def format_references(context):
     
     return formatted_references
 
-def preprcoess(context):
+def preprocess(context):
     context = remove_references_and_emails(context)
     key_sentences = extract_key_sentences(context)
     refined_context = ' '.join(key_sentences)
