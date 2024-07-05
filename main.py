@@ -125,10 +125,8 @@ vectordb = make_embeddings(list_of_documents)
 
 def ans(llm, context, question):
    prompt = f"""<|system|>
-
-   You are an expert assistant that answers questions of various researches in various disciplines.
-
-   You are given some extracted parts in a paragraph, from research papers along with a question. Everything in the extract may not be important. Choose carefully!
+   
+   You are given some extracted parts in a paragraph from research papers along with a question. Everything in the extract may not be important. Choose carefully!
 
    If you don't know the answer, just say "I don't know." Don't try to make up an answer.
 
@@ -136,17 +134,13 @@ def ans(llm, context, question):
 
    Your answer should not be more than {CFG.max_len} words long.
 
-   The answer should be grammatically correct.
+   The answer should be grammatically correct and start from the beginning of a sentence.
 
    Use the following pieces of context to answer the question at the end.
 
-   <|end|>
-
-   <|user|>
-
    Context: {context}
 
-   Question is below. Remember to answer only in the English:
+   Question is below. Remember to answer only in English:
 
    Question: {question}
 
