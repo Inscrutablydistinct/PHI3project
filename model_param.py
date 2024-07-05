@@ -17,7 +17,6 @@ class CFG:
     split_chunk_size = 512
     split_overlap = 100
     embeddings_model_repo = 'BAAI/bge-base-en-v1.5'
-    k = 6
     PDFs_path = './New Folder With Items'
     Embeddings_path =  './papers-vectordb/faiss_index_papers'
     Output_folder = './papers-vectordb'
