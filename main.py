@@ -138,7 +138,7 @@ def ans(llm, context, question):
 
    The answer should be grammatically correct.
 
-   Use only the following pieces of context to answer the question at the end.
+   Use the following pieces of context to answer the question at the end.
 
    <|end|>
 
