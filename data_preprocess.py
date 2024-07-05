@@ -112,15 +112,13 @@ def remove_references_and_emails(context):
 
 def format_references(context):
     references = re.sub(r'(\w+\. \w+\., "[^"]+", \w+\. \w+, vol\. \d+, pp\. \d+–\d+.)','', context)
-    formatted_references = "\n- ".join(references)
-    return formatted_references
+    return references
 
 def preprocess(context):
     context = remove_references_and_emails(context)
     # key_sentences = extract_key_sentences(context)
     # refined_context = ' '.join(key_sentences)
     references = format_references(context)
-    final_context = refined_context + "\n\nKey references on this topic include:\n- " + references
-    return final_context
+    return references
 
 
