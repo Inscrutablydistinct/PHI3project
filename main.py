@@ -167,8 +167,8 @@ while (query.lower() != "stop"):
     
     # print(filtered_metadata[0])
     
-    # context = preprocess(make_context(list_of_documents, filtered_metadata[0],out, vectordb))
-    context = make_context(list_of_documents, filtered_metadata[0],out, vectordb)
+    context = preprocess(make_context(list_of_documents, filtered_metadata[0],out, vectordb))
+    # context = make_context(list_of_documents, filtered_metadata[0],out, vectordb)
     print(context)
     print(ans(llm,context,out[0]))
 
