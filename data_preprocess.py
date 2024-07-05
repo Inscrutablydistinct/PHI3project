@@ -67,6 +67,6 @@ def remove_references_and_emails(context):
 def preprocess(context):
     context = remove_references_and_emails(context)
     key_sentences = extract_key_sentences(context)
-    print(key_sentences)
     refined_context = ' '.join(key_sentences)
+    print(refined_context)
     return refined_context
