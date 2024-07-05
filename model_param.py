@@ -16,6 +16,7 @@ class CFG:
     max_new_tokens = 300
     split_chunk_size = 512
     split_overlap = 100
+    k = 6
     embeddings_model_repo = 'BAAI/bge-base-en-v1.5'
     PDFs_path = './New Folder With Items'
     Embeddings_path =  './papers-vectordb/faiss_index_papers'
