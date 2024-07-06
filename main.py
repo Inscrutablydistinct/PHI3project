@@ -10,6 +10,7 @@ import re
 import json
 import time 
 import warnings
+import openai
 warnings.filterwarnings("ignore")
 
 with open('metadata.json') as f:
@@ -149,10 +150,20 @@ def ans(llm, context, question):
    """
    # llm_response = llm(prompt)
    # return llm_ans(llm_response)
-   curl http://localhost:11434/api/generate -d '{
-  "model": "llama3",
-  "prompt": prompt
-}'
+    client = openai.OpenAI(
+    base_url="http://localhost:11434/v1")
+
+    response = client.chat.completions.create(
+    model="phi3"
+    temperature=0.4,
+    n=1,
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": prompt},
+    ],)
+
+print("Response:")
+print(response.choices[0].message.content)
 
 llm = model_pipeline()
 
