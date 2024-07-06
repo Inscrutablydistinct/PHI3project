@@ -162,8 +162,8 @@ def ans(llm, context, question):
         {"role": "user", "content": prompt},
    ],)
 
-print("Response:")
-print(response.choices[0].message.content)
+   print("Response:")
+   print(response.choices[0].message.content)
 
 llm = model_pipeline()
 
