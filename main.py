@@ -147,8 +147,12 @@ def ans(llm, context, question):
    <|assistant|>
 
    """
-   llm_response = llm(prompt)
-   return llm_ans(llm_response)
+   # llm_response = llm(prompt)
+   # return llm_ans(llm_response)
+   curl http://localhost:11434/api/generate -d '{
+  "model": "llama3",
+  "prompt": "prompt"
+}'
 
 llm = model_pipeline()
 
