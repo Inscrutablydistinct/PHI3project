@@ -9,8 +9,8 @@ from langchain.embeddings import HuggingFaceInstructEmbeddings
 class CFG:
     DEBUG = False
     model_name = 'microsoft/Phi-3-mini-128k-instruct'
-    temperature = 0.4
-    top_p = 0.90
+    temperature = 0.3
+    top_p = 0.95
     repetition_penalty = 1.15
     max_len = 200
     max_new_tokens = 200
