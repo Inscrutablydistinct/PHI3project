@@ -53,6 +53,8 @@ def make_context(list_of_documents, top_md, out):
 
     #     top_k_documents = [filtered_documents[i] for i in range(len(filtered_documents)) if i in top_k_indices]
     context = ""
+    print(top_md)
+    print(list_of_documents)
     results_with_scores = vectordb.similarity_search_with_score(query, filter = top_md)
     for doc, score in results_with_scores:
         print(f"Content: {doc.page_content}, Score: {score}")
