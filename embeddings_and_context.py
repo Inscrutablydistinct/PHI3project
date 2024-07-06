@@ -58,35 +58,6 @@ def make_context(list_of_documents, top_md, out):
     print(f"\n\n{context}\n\n")
     return remove_repeated_phrases(context)
 
-def make_context(list_of_documents, filter_metadata, query_list):
-    vectordb = make_embeddings(list_of_documents)
-    
-    query = query_list[0]
-    
-    # Ensure `filter_metadata` is a dictionary, as required by the filter
-    if not isinstance(filter_metadata, dict):
-        print("Metadata filter should be a dictionary.")
-        return ""
-    
-    # Perform similarity search with metadata filter
-    results_with_scores = vectordb.similarity_search_with_score(query, filter=filter_metadata)
-    
-    context = ""
-    print(query)
-    print(filter_metadata)
-
-    # Check if results are returned and process them
-    if not results_with_scores:
-        print("No documents found for the given query and metadata filter.")
-    else:
-        for doc, score in results_with_scores:
-            print(f"Content: {doc.page_content}, Score: {score}")
-            context += " " + doc.page_content
-    
-    print(f"\n\n{context}\n\n")
-    return remove_repeated_phrases(context)
-
-
 def remove_repeated_phrases(text, chunk_size=400, overlap=0.2):
     """
     Remove repeated phrases from text.
