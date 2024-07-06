@@ -32,35 +32,31 @@ def find_similar(list_of_documents, top):
             filtered_indices.append(idx)
     return filtered_indices, filtered_documents
 
-# def make_context(list_of_documents, top_md, out):
-#     vectordb = make_embeddings(list_of_documents)
-#     # filtered_indices, filtered_documents = find_similar(list_of_documents, top_md)
-#     # if not filtered_indices:
-#     #     print("No documents found with the specified metadata.")
-#     # else:
-#     #     filtered_embeddings = [vectordb.index.reconstruct(idx) for idx in filtered_indices]
-#     #     filtered_embeddings = np.array(filtered_embeddings)
-#     #     if len(filtered_embeddings.shape) == 1:
-#     #         filtered_embeddings = filtered_embeddings.reshape(1, -1)
+def make_context(list_of_documents, top_md, out):
+    vectordb = make_embeddings(list_of_documents)
+    filtered_indices, filtered_documents = find_similar(list_of_documents, top_md)
+    if not filtered_indices:
+        print("No documents found with the specified metadata.")
+    else:
+        filtered_embeddings = [vectordb.index.reconstruct(idx) for idx in filtered_indices]
+        filtered_embeddings = np.array(filtered_embeddings)
+        if len(filtered_embeddings.shape) == 1:
+            filtered_embeddings = filtered_embeddings.reshape(1, -1)
 
-#     query = out[0]
-#     #     print(f"\n\n{query}\n\n")
-#     #     query_embedding = embeddings.embed_query(query)
-#     #     query_embedding = np.array(query_embedding).reshape(1, -1)
+        query = out[0]
+        print(f"\n\n{query}\n\n")
+        query_embedding = embeddings.embed_query(query)
+        query_embedding = np.array(query_embedding).reshape(1, -1)
 
-#     #     similarities = cosine_similarity(query_embedding, filtered_embeddings).flatten()
-#     #     top_k_indices = similarities.argsort()[-3:][::-1]
+        similarities = cosine_similarity(query_embedding, filtered_embeddings).flatten()
+        top_k_indices = similarities.argsort()[-3:][::-1]
 
-#     #     top_k_documents = [filtered_documents[i] for i in range(len(filtered_documents)) if i in top_k_indices]
-#     context = ""
-#     print(top_md)
-#     print(list_of_documents)
-#     results_with_scores = vectordb.similarity_search_with_score(query, filter = top_md)
-#     for doc, score in results_with_scores:
-#         print(f"Content: {doc.page_content}, Score: {score}")
-#         context += " " + doc.page_content
-#     print(f"\n\n{context}\n\n")
-#     return remove_repeated_phrases(context)
+        top_k_documents = [filtered_documents[i] for i in range(len(filtered_documents)) if i in top_k_indices]
+        context = ""
+        for doc in top_k_documents:
+            context += " " + doc.page_content
+    print(f"\n\n{context}\n\n")
+    return remove_repeated_phrases(context)
 
 def make_context(list_of_documents, filter_metadata, query_list):
     vectordb = make_embeddings(list_of_documents)
@@ -120,4 +116,3 @@ def remove_repeated_phrases(text, chunk_size=400, overlap=0.2):
             print(f"Skipped a repeated chunk: {chunk[:30]}...")
 
     return ' '.join(cleaned_tokens)
-
