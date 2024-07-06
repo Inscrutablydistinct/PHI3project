@@ -76,7 +76,9 @@ def make_context(list_of_documents, filter_metadata, query_list):
     results_with_scores = vectordb.similarity_search_with_score(query, filter=filter_metadata)
     
     context = ""
-    
+    print(query)
+    print(filter_metadata)
+
     # Check if results are returned and process them
     if not results_with_scores:
         print("No documents found for the given query and metadata filter.")
