@@ -154,7 +154,7 @@ def ans(llm, context, question):
    base_url="http://localhost:11434/v1")
 
    response = client.chat.completions.create(
-   model="phi3"
+   model="phi3",
    temperature=0.4,
    n=1,
    messages=[
