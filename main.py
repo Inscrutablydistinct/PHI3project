@@ -121,7 +121,10 @@ Examples:
 The answer should only be a list and no other content whatsoever. Please print the Output for the following query:\n"""
 
 list_of_documents = text_split.text_split(d)
-
+client = openai.OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="nokeyneeded",
+)
 def ans(llm, context, question):
    prompt = f"""<|system|>
    
@@ -150,8 +153,6 @@ def ans(llm, context, question):
    """
    # llm_response = llm(prompt)
    # return llm_ans(llm_response)
-   client = openai.OpenAI(
-   base_url="http://localhost:11434/v1")
 
    response = client.chat.completions.create(
    model="phi3",
