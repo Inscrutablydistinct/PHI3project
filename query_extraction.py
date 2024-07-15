@@ -21,13 +21,25 @@ terminators = [
 ]
 
 def generate_md(Question, query):
-    messages = [{"role": "user", "content": f"{Question}{query}"}]
-    inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt")
-    outputs = model.generate(inputs, max_new_tokens=150)
-    text = tokenizer.batch_decode(outputs)[0]
+    # messages = [{"role": "user", "content": f"{Question}{query}"}]
+    # inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt")
+    # outputs = model.generate(inputs, max_new_tokens=150)
+    # text = tokenizer.batch_decode(outputs)[0]
+
+    response = client.chat.completions.create(
+    model="phi3",
+    temperature=0.4,
+    n=1,
+    messages=[
+         {"role": "system", "content": "Question"},
+         {"role": "user", "content": query},
+    ],)
+    print("Response:")
+    text = response.choices[0].message.content
+    print(text)
+    
     text = process_llm_response(text)
     print(text)
-    print()
     pattern = r'\["(.*?)",\s*{(?:\s*".*?":\s*".*?"\s*,?\s*)*}\]'
     match = re.search(pattern, text)
     if match:
