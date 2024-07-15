@@ -23,7 +23,7 @@ terminators = [
 def generate_md(Question, query):
     messages = [{"role": "user", "content": f"{Question}{query}"}]
     inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt")
-    outputs = model.generate(inputs, max_new_tokens=150)
+    outputs = model.generate(inputs, max_new_tokens=250)
     text = tokenizer.batch_decode(outputs)[0]
     text = process_llm_response(text)
     print(text)
