@@ -165,6 +165,7 @@ def ans(llm, context, question):
    print(f"\n\n\n{prompt}\n\n\n")
    print("Response:")
    print(response.choices[0].message.content)
+   print()
 
 llm = model_pipeline()
 
