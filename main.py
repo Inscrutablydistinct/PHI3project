@@ -162,7 +162,7 @@ def ans(llm, context, question):
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": prompt},
    ],)
-
+   print(f"\n\n\n{prompt}\n\n\n")
    print("Response:")
    print(response.choices[0].message.content)
 
