@@ -22,6 +22,7 @@ def filter_attributes(metadata_entry, key, value):
     elif (key == 'author'):
         if (isinstance(metadata_entry['author'], list)):
             metadata_entry['author'] = " ".join(metadata_entry['author'])
+        print(metadata_entry['author'])
         cos_sim = compute_cosine_similarity(metadata_entry['author'], value)
         return cos_sim*3
     elif (key == 'abstract'):
