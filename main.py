@@ -122,7 +122,7 @@ Examples:
     Identified Attributes:
     author: 'A. Rocks'
     Main Query: "Give me a brief summary of the research done by the author A. Rocks."
-    Output: ["Give me a brief summary of the research done by the author A. Rocks.", {"author": "A. Rocks"}]
+    Output: ["Give me a brief summary of the research", {"author": "A. Rocks"}]
 The answer should only be a list and no other content whatsoever. Please print the Output for the following query:\n"""
 
 list_of_documents = text_split.text_split(d)
