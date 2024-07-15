@@ -25,7 +25,7 @@ def generate_md(Question, query,client):
     # inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt")
     # outputs = model.generate(inputs, max_new_tokens=150)
     # text = tokenizer.batch_decode(outputs)[0]
-
+    prnt(Question)
     response = client.chat.completions.create(
     model="phi3",
     temperature=0.4,
