@@ -25,7 +25,6 @@ def generate_md(Question, query,client):
     # inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt")
     # outputs = model.generate(inputs, max_new_tokens=150)
     # text = tokenizer.batch_decode(outputs)[0]
-    print(Question)
     response = client.chat.completions.create(
     model="phi3",
     temperature=0.4,
@@ -37,7 +36,6 @@ def generate_md(Question, query,client):
     print("Response:")
     text = response.choices[0].message.content
     print(text)
-    
     text = process_llm_response(text)
     print(text)
     pattern = r'\["(.*?)",\s*{(?:\s*".*?":\s*".*?"\s*,?\s*)*}\]'
