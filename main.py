@@ -185,8 +185,7 @@ while (query.lower() != "stop"):
     context = preprocess(make_context(list_of_documents, filtered_metadata[0],out))
     # context = make_context(list_of_documents, filtered_metadata[0],out, vectordb)
     print(context)
-    print(ans(llm,context,out[0]))
-
+    ans(llm,context,out[0])
     print("Source Document: "+ filtered_metadata[0]['title'])
     
     print("Time Taken: "+ str(time.time() - start_time))
