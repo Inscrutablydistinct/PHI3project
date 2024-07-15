@@ -31,8 +31,8 @@ def generate_md(Question, query,client):
     temperature=0.4,
     n=1,
     messages=[
-         {"role": "system", "content": Question},
-         {"role": "user", "content": query},
+         {"role": "system", "content": "You are a helpful assistant." },
+         {"role": "user", "content": Question + query},
     ],)
     print("Response:")
     text = response.choices[0].message.content
