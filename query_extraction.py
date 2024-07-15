@@ -14,13 +14,13 @@ import json
 with open('metadata.json') as f:
     d = json.load(f)
 
-tokenizer, model = build_model(model_repo=CFG.model_name)
+# tokenizer, model = build_model(model_repo=CFG.model_name)
 terminators = [
     tokenizer.eos_token_id,
     tokenizer.bos_token_id
 ]
 
-def generate_md(Question, query):
+def generate_md(Question, query,client):
     # messages = [{"role": "user", "content": f"{Question}{query}"}]
     # inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt")
     # outputs = model.generate(inputs, max_new_tokens=150)
@@ -49,19 +49,19 @@ def generate_md(Question, query):
         print("No match found")
         return "[]"
 
-def model_pipeline():
-    pipe = pipeline(
-        task="text-generation",
-        model=model,
-        tokenizer=tokenizer,
-        eos_token_id=terminators,
-        do_sample=True,
-        max_length=CFG.max_len,
-        max_new_tokens=CFG.max_new_tokens,
-        temperature=CFG.temperature,
-        top_p=CFG.top_p,
-        repetition_penalty=CFG.repetition_penalty,
-    )
+# def model_pipeline():
+#     pipe = pipeline(
+#         task="text-generation",
+#         model=model,
+#         tokenizer=tokenizer,
+#         eos_token_id=terminators,
+#         do_sample=True,
+#         max_length=CFG.max_len,
+#         max_new_tokens=CFG.max_new_tokens,
+#         temperature=CFG.temperature,
+#         top_p=CFG.top_p,
+#         repetition_penalty=CFG.repetition_penalty,
+#     )
 
-    llm = HuggingFacePipeline(pipeline=pipe)
-    return llm
+#     llm = HuggingFacePipeline(pipeline=pipe)
+#     return llm
