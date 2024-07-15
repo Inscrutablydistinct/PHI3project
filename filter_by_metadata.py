@@ -20,10 +20,10 @@ def filter_attributes(metadata_entry, key, value):
         cos_sim = compute_cosine_similarity(metadata_entry['title'], value)
         return cos_sim
     elif (key == 'author'):
-        if (instanceof(value, list)):
+        if (isinstance(value, list)):
             value = " ".join(value)
         cos_sim = compute_cosine_similarity(metadata_entry['author'], value)
-        return cos_sim
+        return cos_sim*3
     elif (key == 'abstract'):
         cos_sim = compute_cosine_similarity(metadata_entry['abstract'], value)
         return cos_sim
