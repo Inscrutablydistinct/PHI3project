@@ -15,10 +15,10 @@ with open('metadata.json') as f:
     d = json.load(f)
 
 # tokenizer, model = build_model(model_repo=CFG.model_name)
-terminators = [
-    tokenizer.eos_token_id,
-    tokenizer.bos_token_id
-]
+# terminators = [
+#     tokenizer.eos_token_id,
+#     tokenizer.bos_token_id
+# ]
 
 def generate_md(Question, query,client):
     # messages = [{"role": "user", "content": f"{Question}{query}"}]
