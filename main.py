@@ -118,6 +118,11 @@ Examples:
     Main Query: "Please give me the abstract of the research."
     Output: ["Please give me the abstract of the research.", {"abstract": "Research on blockchain technology.","keywords": "blockchain technology"}]
 
+11. Query: "Give me a brief summary of the research done by the author A. Rocks."
+    Identified Attributes:
+    author: 'A. Rocks'
+    Main Query: "Give me a brief summary of the research done by the author A. Rocks."
+    Output: ["Give me a brief summary of the research done by the author A. Rocks.", {"author": "A. Rocks"}]
 The answer should only be a list and no other content whatsoever. Please print the Output for the following query:\n"""
 
 list_of_documents = text_split.text_split(d)
