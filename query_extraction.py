@@ -31,7 +31,7 @@ def generate_md(Question, query,client):
     temperature=0.4,
     n=1,
     messages=[
-         {"role": "system", "content": "Question"},
+         {"role": "system", "content": Question},
          {"role": "user", "content": query},
     ],)
     print("Response:")
