@@ -186,7 +186,7 @@ md = [{
     ]
 },{
     "title": "Bone Cancer Rates in Dinosaurs Compared with Modern Vertebrates",
-    "authors": [
+    "author": [
         "L.C. Natarajan",
         "A.L. Melott",
         "B.M. Rothschild",
@@ -205,7 +205,7 @@ md = [{
     "results": "The rate of metastatic bone disease in the dinosaur fossil record is consistent with the predicted rate of bone metastasis in the dinosaur record. The probability of finding less than one cancer is 37% according to the reptilian cancer rate, and 71% according to the avian rate, so the observed event does not represent an elevated rate. We cannot negate the null hypothesis. Thus, there does not appear to be an elevated rate of bone cancer in the dinosaur fossil record."
 },{
     "title": "Approach to Physical Reality: a note on Poincaré Group and the philosophy of Nagarjuna",
-    "authors": [
+    "author": [
         "David Vernette",
         "Punam Tandan",
         "Michele Caponigro"
